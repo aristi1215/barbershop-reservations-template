@@ -1,0 +1,24 @@
+[
+    {
+      "location": "New York, NY",
+      "author": "John D.",
+      "testimonial": "Great experience! The barbers really take their time to ensure you're happy with the result. Highly recommended.",
+      "image": "/imgs/user1.jpg",
+      "rate": 5
+    },
+    {
+      "location": "Los Angeles, CA",
+      "author": "Sarah P.",
+      "testimonial": "The atmosphere is chill and the staff is friendly. My haircut turned out just the way I wanted.",
+      "image": "/imgs/user2.jpg",
+      "rate": 4
+    },
+    {
+      "location": "Chicago, IL",
+      "author": "Michael B.",
+      "testimonial": "Fantastic service! The barber gave me some great tips on how to style my hair at home. I’ll be back for sure.",
+      "image": "/imgs/user3.jpg",
+      "rate": 5
+    }
+  ]
+  
