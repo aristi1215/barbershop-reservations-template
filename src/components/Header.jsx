@@ -1,8 +1,22 @@
 import { useState } from "react"
 import { AnimatedHamburgerButton } from "./animated/AnimatedHamburgerButton"
+import SignUpModal from '../components/animated/Modal'
+import ProfileModal from '../components/animated/Modal'
+import { AuthModal } from "./AuthModal"
+import { Calendar } from "./Calendar"
+import { useAuthContext } from "../context/AuthContextProvider"
+import { UserProfile } from "./landing/UserProfile"
 
 export const Header = () => {
     const [activeMenu, setActiveMenu] = useState(false)
+    const {session} = useAuthContext()
+    const changePopUpData = () => {
+      if(session){
+        return Calendar
+      }
+      return AuthModal
+    }
+
   return (
    
     <header className="fixed top-0 left-0 z-20 w-full bg-black md:bg-transparent md:static">
@@ -17,12 +31,15 @@ export const Header = () => {
           <a href="">Blog</a>
           <a href="">Contact Us</a>
         </div>
-        <button className="border-2 border-p-yellow p-2">Book appointment</button>
+        <div className="flex gap-3">
+        <SignUpModal btnText={'Book Appointment'} Content={changePopUpData()} showHeader={false} />
+        <ProfileModal Content={AuthModal} Button={UserProfile} />
+        </div>
       </div>
       {/* Mobile Menu */}
       <div className="flex justify-between items-center w-full z-20 md:hidden">
         <AnimatedHamburgerButton src="/icons/burger.svg" alt="navbar-menu-icon" active={activeMenu} setActive={setActiveMenu} />
-        <button className="border-2 border-p-yellow p-2">Book appointment</button>
+        <SignUpModal btnText={'Book Appointment'} Content={changePopUpData()} showHeader={false} />
       </div>
       <div className={`${activeMenu ? 'translate-x-0' : '-translate-x-full'} h-screen w-screen fixed bg-black top-0 left-0 transition-transform duration-500 md:hidden z-10`}>
         <div className="flex justify-center items-center h-full">

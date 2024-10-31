@@ -1,7 +1,7 @@
 
 import { AnimatedCarousel } from "../animated/AnimatedCarousel"
 import testimonials from '../../mocks/mockTestimonials.json'
-import { TestimonialCard } from "../TestimonialCard";
+import { TestimonialCard } from "./TestimonialCard";
 
 export const Reviews = () => {
 const isMobile = window.innerWidth < 768;
