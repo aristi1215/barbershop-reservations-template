@@ -40,8 +40,10 @@ export const ReservationsProvider = ({children}) => {
                 employee_id: 1
                 })
 
-        if(error) throw new Error('An error has occurred while creating the reservation')
+        if(error) {
         setError('An error has occurred creating the reservation')
+        throw new Error('An error has occurred while creating the reservation')
+      }
     }   
 
 
