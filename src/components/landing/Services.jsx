@@ -3,7 +3,7 @@ import { AnimatedShowCardsInView } from "../animated/AnimatedShowCardsInView"
 export const Services = () => {
     const isMobile = window.innerWidth < 768;
   return (
-    <section className=" text-center bg-[url('imgs/services.jpg')] bg-cover text-white py-10 gap-4 flex flex-col">
+    <section className=" text-center bg-[url('/imgs/services.png')] bg-cover text-white py-10 gap-4 flex flex-col">
         <header className="mb-10">
             <small className="text-p-yellow">OUR TREATMENT</small>
             <h2 className="text-3xl md:text-[3rem]">Services</h2>
