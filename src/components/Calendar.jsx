@@ -5,7 +5,7 @@ import {months} from '../hooks/useCalendar'
 import { useEffect, useState } from "react";
 import { useReservationsContext } from "../context/ReservationsContext";
 
-export const Calendar = () => {
+export const Calendar = ({setIsOpen}) => {
 
   const {
     currentMonth,
@@ -28,6 +28,11 @@ export const Calendar = () => {
       setSelectedDay(day.format("YYYY-MM-DD"));
     }
   };
+
+  const handleCreateReservation = () => {
+    setIsOpen(false) 
+    createReservation(selectedDay)
+  }
 
 
   return (
@@ -60,7 +65,7 @@ export const Calendar = () => {
       </div>
 
       <div className="w-full flex justify-around items-center mt-4  ">
-        <button onClick={ () => createReservation(selectedDay) } className="w-[70%] p-1 bg-black/70 rounded-lg text-p-yellow font-headings">Reserve</button>
+        <button onClick={ () => handleCreateReservation() } className="w-[70%] p-1 bg-black/70 rounded-lg text-p-yellow font-headings">Reserve</button>
       </div>
       <p className="text-center mt-3">{error}</p>
 
